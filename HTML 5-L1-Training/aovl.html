@@ -1,0 +1,156 @@
+<html>
+
+<head>
+	<link rel="icon" href="demo_icon.png" type="image/gif" sizes="500x375">
+	<title>AOVL</title>
+	<h2><br><font color=#33a>Amazing Online Video Library</h2>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+	body {
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.topnav {
+		overflow: hidden;
+		background-color: #33a;
+	}
+
+	.topnav a {
+		float: left;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+
+	.topnav a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+	.topnav a.active {
+		background-color: #4CAF50;
+		color: white;
+	}
+	
+	.dateTime {
+		text-align: right;
+		background-color: #CCC;
+	}
+	
+	.video {
+		text-align: center;
+	}
+	
+	.video input.playPause {
+		background-color: #99f;
+		padding: 10px;
+	}
+	
+	.video video.vid {
+		border: 3px solid blue;
+	}
+	
+	.vid-req{
+		border: 3px solid blue;
+		text-align: center;
+		background-color: #CCC;
+	}
+	</style>
+	
+	<script>
+		var fn, ln, em, ct, ag, vc;
+		var ID = window.setTimeout("displayTime();",1000);
+		function updateTime() {
+			var date = new Date();
+			return date.toLocaleTimeString();
+		}
+		function displayTime() {
+			document.getElementById("DaTe").innerHTML = updateTime();
+			ID = window.setTimeout("displayTime();",1000);
+		}
+		function checkAlpha() {
+			var letters = /[^A-Za-z]/;
+			var fname, lnmae;
+			fname = document.getElementById("fn").value;
+			lname = document.getElementById("ln").value;
+			if(!letters.test(fname) && !letters.test(lname))
+			{
+				assignvals();
+			}
+			else
+			{
+				window.alert("Enter valid names!!!");
+			}
+		}
+		function assignvals() {
+			fn = document.getElementById("fn").value;
+			ln = document.getElementById("ln").value;
+			em = document.getElementById("em").value;
+			ct = document.getElementById("ct").value;
+			ag = document.getElementById("ag").value;
+			vc = document.getElementById("vc").value;
+			window.alert("Firstname:"+fn+"\nLastname:"+ln+"\nE Mail:"+em+"\nCity:"+ct+"\nAge:"+ag+"\nVideo Choice:"+vc);
+		}
+		function PlayPause() {
+			var vid = document.getElementById("vid");
+			if(vid.paused)
+				vid.play();
+			else
+				vid.pause();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="dateTime">
+		<p id="DaTe"></p>
+	</div>
+	
+	<div class="topnav">
+	  <a class="active" href="#home">Home</a>
+	  <a href="aboutaovl.html">About</a>
+	  <a href="careersaovl.html">Careers</a>
+	</div>
+	
+	<div class="video">
+		<br>
+		<video class="vid" width="720" height="405" id="vid">
+		  <source src="testvid.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+		<br>
+		<input type="button" class="playPause" value="Play/Pause" onclick="PlayPause()">
+	</div>
+	
+	<br><br>
+	<div class="vid-req">
+	<h3>Video Request Form</h3>
+		<form>
+			<input type="text" name="firstname" id="fn" placeholder="Firstname"><br><br>
+			<input type="text" name="lastname" id="ln" placeholder="Lastname"><br><br>
+			<input type="email" name="email" id="em" placeholder="E-Mail ID"><br><br>
+			City:
+			<input type="text" list="ct">
+			<datalist name="city" id="ct">
+				<option value="delhi">Delhi</option>
+				<option value="mumbai">Mumbai</option>
+				<option value="kolkata">Kolkata</option>
+				<option value="chennai">Chennai</option>
+				<option value="bangalore">Bangalore</option>
+				<option value="hyderabad">Hyderabad</option>
+			</datalist><br><br>
+			Age: 
+			<input type="number" name="age" id="ag" max=120 min=18><br><br>
+			<input type="text" name="vidchoice" id="vc" placeholder="Enter Vid Name"><br><br>
+			<input type="submit" value="Submit" onclick="checkAlpha()">
+			<input type="reset">
+		</form>
+	</div>
+	<br><br>
+</body>
+
+</html>

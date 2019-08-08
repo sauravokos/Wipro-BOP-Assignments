@@ -1,0 +1,95 @@
+<html>
+
+<head>
+	<link rel="icon" href="demo_icon.png" type="image/gif" sizes="500x375">
+	<title>Careers AOVL</title>
+	<h2><br><font color=#33a>Careers</h2>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.topnav {
+	  overflow: hidden;
+	  background-color: #33a;
+	}
+
+	.topnav a {
+	  float: left;
+	  color: #f2f2f2;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	}
+
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	}
+
+	.topnav a.active {
+	  background-color: #4CAF50;
+	  color: white;
+	}
+	
+	.dateTime {
+		text-align: right;
+		background-color: #CCC;
+	}
+	
+	.abt-section {
+		font: Arial;
+		font-style: bold;
+		font-size: 20;
+		color: #000;
+		text-align: center;
+	}
+	
+	.abt-section p.abt-cont {
+		font-size: 15;
+		text-align: center;
+		padding-left: 50;
+		padding-right: 50;
+		text-indent: 30;
+	}
+	</style>
+	
+	<script>
+		var ID = window.setTimeout("displayTime();",1000);
+		function updateTime() {
+			var date = new Date();
+			return date.toLocaleTimeString();
+		}
+		function displayTime() {
+			document.getElementById("DaTe").innerHTML = updateTime();
+			ID = window.setTimeout("displayTime();",1000);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="dateTime">
+		<p id="DaTe"></p>
+	</div>
+
+	<div class="topnav">
+	  <a href="aovl.html">Home</a>
+	  <a href="aboutaovl.html">About</a>
+	  <a class="active" href="#careers">Careers</a>
+	</div>
+	
+	<div class="abt-section">
+	<b>
+	<br>
+	Check this page for hiring memos</font>
+		<p class="abt-cont">
+		We're not currently hiring
+		</p>
+	</b>
+	</div>
+</body>
+
+</html>
