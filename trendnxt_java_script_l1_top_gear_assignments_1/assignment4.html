@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<script>
+		function sortPrime()
+		{
+			var primeAr = new Array;
+			var inp = document.getElementById("u_inp").value;
+			var flag, inc=0;
+			for(i=2; i<=inp; i++)
+			{
+				flag=0;
+				for(j=2; j<=Math.sqrt(i); j++)
+					if(i%j==0)
+					{
+						flag=1;
+						break;
+					}
+				if(flag==0)
+					primeAr[inc++] = i;
+			}
+			window.alert(primeAr.sort(function(a, b){return a-b;}));
+		}
+	</script>
+</head>
+
+<body>
+	<input type="text" id="u_inp">
+	<input type="submit" value="Submit" onclick="sortPrime()">
+</body>
+
+</html>

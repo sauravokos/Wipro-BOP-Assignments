@@ -1,0 +1,21 @@
+<html>
+
+<head>
+	<script>
+		var ID = window.setTimeout("displayTime();",1000);
+		function updateTime() {
+			var date = new Date();
+			return date.toLocaleString();
+		}
+		function displayTime() {
+			document.getElementById("DaTe").innerHTML = updateTime();
+			ID = window.setTimeout("displayTime();",1000);
+		}
+	</script>
+</head>
+
+<body>
+	<p id="DaTe"></p>
+</body>
+
+</html>

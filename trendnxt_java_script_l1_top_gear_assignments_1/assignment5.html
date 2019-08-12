@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<script>
+		function findArea()
+		{
+			var a, b, c, area = 0;
+			a = parseInt(document.getElementById("u_inp1").value);
+			b = parseInt(document.getElementById("u_inp2").value);
+			c = parseInt(document.getElementById("u_inp3").value);
+			var s = (a+b+c)/2;
+			if(s<=a||s<=b||s<=c)
+				window.alert("Invalid Inputs");
+			else
+				area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+			window.alert("Area of Triangle: "+area);
+		}
+	</script>
+</head>
+
+<body>
+	<input type="number" id="u_inp1" min=0><br>
+	<input type="number" id="u_inp2" min=0><br>
+	<input type="number" id="u_inp3" min=0><br>
+	<input type="submit" value="Submit" onclick="findArea()">
+</body>
+
+</html>
