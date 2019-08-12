@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	<script>
+		var ar1 = ['a','b','c','d'];
+		var ar2 = [1,2,3,4];
+		var merg = [];
+		var len, flag;
+		if(ar1.length<ar2.length)
+		{
+			len = ar1.length;
+			flag = 0;
+		}
+		else
+		{
+			len = ar2.length;
+			flag = 1;
+		}
+		
+		for(i=0;i<len;i++)
+		{
+			merg.push(ar1[i]);
+			merg.push(ar2[i]);
+		}
+		
+		if(!flag)
+			for(j=i;j<ar2.length;j++)
+				merg.push(ar2[j]);
+		else
+			for(j=i;j<ar1.length;j++)
+				merg.push(ar1[j]);
+		
+		window.alert(ar1 + " " + ar2);
+		window.alert(merg);
+	</script>
+</head>
+
+</html>

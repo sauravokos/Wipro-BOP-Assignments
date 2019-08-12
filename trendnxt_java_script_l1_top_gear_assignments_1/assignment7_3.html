@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<script>
+		var ar = [1,2,3,4,5,6,7,8,9];
+		function printLast()
+		{
+			var prin = [];
+			var inp = document.getElementById("inp").value;
+			if(inp>=ar.length)
+				for(i=0;i<ar.length;i++)
+					prin.push(ar[i]);
+			else
+				for(i=(ar.length-inp);i<ar.length;i++)
+					prin.push(ar[i]);
+			document.getElementById("res").innerHTML = prin;
+		}
+	</script>
+</head>
+
+<body>
+	<input type="number" min=1 id="inp">
+	<input type="submit" value="Submit" onclick="printLast()">
+	<p id="res"></p>
+</body>
+
+</html>

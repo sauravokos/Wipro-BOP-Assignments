@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<script>
+		function displayAllDetails()
+		{
+			var result;
+			var finPr;
+			var CDName = document.getElementById("CDNa").value;
+			var CDPub = document.getElementById("CDPu").value;
+			var CDPrice = parseInt(document.getElementById("CDPr").value);
+			finPr = 1.1*0.97*CDPrice;
+			result = CDName + "\n" + CDPub + "\n" + finPr;
+			document.getElementById("res").innerHTML = result;
+		}
+	</script>
+</head>
+
+<body>
+	CD Name: <input type="text" id="CDNa"><br>
+	CD Publisher: <input type="text" id="CDPu"><br>
+	CD Price: <input type="number" id="CDPr"><br>
+	<input type="submit" value="Submit" onclick="displayAllDetails()">
+	<p id="res"></p>
+</body>
+
+</html>
