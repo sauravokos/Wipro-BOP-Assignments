@@ -1,0 +1,25 @@
+<html>
+
+<head>
+	<script>
+		var str="asdfghjkl"
+		function occur(a)
+		{	
+			c = 0
+			a = parseInt(a);
+			for(i=0;i<str.length;i++)
+			{
+				if(str.charAt(i)==a)
+					c++
+			}
+			window.alert(c);
+		}
+	</script>
+</head>
+
+<body>
+	<input type="text" id="inp">
+	<input type="submit" value="Submit" onclick="occur(document.getElementById('inp').value)">
+</body>
+
+</html>
